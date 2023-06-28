@@ -56,7 +56,13 @@ class GeneralInformation(db.Model):
     residency = db.Column(db.String(250), nullable=False)
     first_term = db.Column(db.String(250), nullable=False)
     last_term = db.Column(db.String(250), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))  
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    # def status():
+    #     rand_num = random.randint(0, 1)
+    #     if rand_num == 0:
+    #         return "Inactive"
+    #     return "Active"  
 
 
 class User(db.Model, UserMixin):

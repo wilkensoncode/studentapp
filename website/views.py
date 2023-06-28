@@ -62,5 +62,20 @@ def courses():
 
 @views.route('/profile')
 @login_required
-def profile(): 
+def profile():
+    # if request.method == 'POST':
+    #     student_class = request.form.get("student_class")
+    #     status = request.form.get("status")
+    #     student_type = request.form.get("student_type")
+    #     residency = request.form.get("residency")
+    #     first_term = request.form.get("first_term")
+    #     last_term = request.form.get("last_term")
+    #     user_id = request.form.get("user_id")
+
+    #     generalInformation = (
+    #         GeneralInformation(status=GeneralInformation.status())
+            
+    #                                             )
+
+
     return render_template('profile.html', user=current_user)

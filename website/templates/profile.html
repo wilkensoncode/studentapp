@@ -68,11 +68,20 @@
                 <div> Freshman  ({{ count.value }}+credits) </div>
             {% endif %}
 
-            <div> Active {{user.address}} </div> 
-            <div> Continuing/transfer/new{{user.city}}  </div>
-            <div> Full-time/Part-time In-State {{user.state}}  </div>
-            <div> Fall 2023 {{user.zip_code}} </div> 
-            <div> Fall 2024{{user.zip_code}} </div> 
+            {% if count.value >= 60 %}
+            <div>Transfer Student</div>  
+            {% elif 25 < count.value < 60 %}
+            <div> Continuing Student</div>
+            {% else %}
+            <div> New Student</div>
+            {% endif %}
+            {% if not count.value <= 11 %}
+            <div> Full-time In-State </div>
+            {% else %}
+            <div> Part-time Out of State </div>
+            {% endif %}
+            <div> Fall 2023 Fall 2023 </div> 
+            <div> Spring 2024 </div> 
     </div> 
 </div>
 
