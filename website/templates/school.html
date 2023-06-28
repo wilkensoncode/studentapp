@@ -1,56 +1,26 @@
-{% block body %}
-<ul>
-    <div class="row bg-dark text-light school">
-        <div class="col font-weight-bold pt-3">
-            <div class="moto text-primary">
-                Expected more. Be more.
-            </div>
-            <div class="font-weight-bold name-sc text-primary">
-                SOUTHERN <span class="dot">.</span> Connecticut
-            </div>
-        </div>
-        <div class="col pb-2 pt-3">
-            <p class="h5">
-                Southern Connecticut State University
-                provides exemplary graduate and undergraduate 
-                education in the liberal arts and professional
-                disciplines. As an intentionally diverse and
-                comprehensive university, Southern is committed to
-                academic excellence, access, social justice,
-                and service for the public good. 
-            </p>
-        </div>
-    </div>
-</ul>
-<ul>
-    <div class="row bg-dark text-light school">
-        <div class="col font-weight-bold pt-3">
-            <div class="moto text-primary">
-                THE PATH TO YOUR FUTURE STARTS AT EASTERN!
-            </div>
-            <div class="font-weight-bold name-sc text-primary text-color">
-                EASTERN <span class="dot">.</span> Connecticut
-            </div> 
-        </div>
-        <div class="col pb-2 pt-3">
-            <p class="h5">
-                Why Eastern?
-                THE PATH TO YOUR FUTURE STARTS AT EASTERN!
-                Eastern is a public university with a private
-                college atmosphere. Live and study on a beautiful
-                campus, get to know your professors and make 
-                lifelong friends. Gain hands-on experience in 
-                your major as you prepare for a successful career.
-                Fit in and stand out! 
-                Check out the Degrees of Difference available on our campus.
-                <a class="" href="https://www.easternct.edu/programs/index.html" target="_blank">
-                    View majors!
-                </a>
-            </p>
-        </div>
-    </div>
-</ul>
-
-
-
+ 
+{% block body %} 
+    {% for key, data in school.items() %} 
+    {{data.url}}
+        <ul> 
+                <div class="row bg-dark text-light school">
+                    <div class="col font-weight-bold pt-3">
+                        <div class="moto text-primary">
+                            {{data.moto}}
+                        </div>
+                        <div class="font-weight-bold name-sc text-primary">
+                        {{key}} <span class="dot">.</span> {{data.state}}
+                        </div> 
+                    </div>
+                    <div class="col pb-2 pt-3">
+                        <p class="h5">
+                            {% for line in data.text %}
+                                {{line}} 
+                            {% endfor %}
+                            <a href="{{data.major_url}}" target="_blank">Majors/Degrees</a>
+                        </p>
+                    </div> 
+                </div> 
+        </ul>
+    {% endfor %} 
 {% endblock %}

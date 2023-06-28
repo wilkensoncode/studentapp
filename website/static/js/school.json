@@ -1,0 +1,49 @@
+{
+    "SOUTHERN": {
+        "moto":"Expected more. Be more.",
+        "state": "Connecticut",
+        "clubs":[150,"Clubs & Organizations"],
+        "academic":[225, "Academic Programs"],
+        "ration":["12:1","Student-to-Faculty Ratio"],
+        "athletic":[19, "NCAA Division II Athletic Teams"],
+        "text":[
+            "Southern Connecticut State University provides",
+            "exemplary graduate and undergraduate education in the",
+            "liberal arts and professional disciplines. As an",
+            "intentionally diverse and comprehensive university,", 
+            "Southern is committed to academic excellence, access,", 
+            "social justice, and service for the public good."
+        ],
+        "major_url": "https://www.southernct.edu/admissions"
+    },
+
+    "EASTERN":{
+        "moto":"THE PATH TO YOUR FUTURE STARTS AT EASTERN!",
+        "state": "Connecticut",
+        "text":[
+            " Why Eastern? THE PATH TO YOUR FUTURE STARTS AT",
+            " EASTERN! Eastern is a public university with a private ",
+            " college atmosphere. Live and study on a beautiful",
+            " campus, get to know your professors and make lifelong", 
+            " friends. Gain hands-on experience in your major as you", 
+            " prepare for a successful career. Fit in and stand out!",
+            " Check out the Degrees of Difference available on our page."
+        ],
+        "major_url": "https://www.easternct.edu/programs/index.html"
+    },
+
+    "WESTERN": {
+        "moto":"Transform Your Life Be inspired by WCSU success stories.",
+        "state": "Connecticut",
+        "text":[
+            " We're laser-focused on making sure motivated students",
+            " like you succeed in the career you want. Whether you",
+            " seek a Bachelor's, Master's or Doctorate degree, WCSU",
+            " and our Career Success Center helps you develop your", 
+            " professional and leadership skills.", 
+            " Prepare for success with a practical, career-focused education",
+            " Check out the Degrees of Difference available on our page."
+        ],
+        "major_url": "https://www.wcsu.edu/admissions/programs/"
+    }
+}

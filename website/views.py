@@ -1,8 +1,10 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify,current_app
 from flask_login import login_required, current_user
 import json 
+import os 
 from .models import *
 from .helper_db import db
+
 
 views = Blueprint('views', __name__)
 
@@ -18,8 +20,17 @@ def home():
             db.session.add(new_note)
             db.session.commit()
             flash('Note added', category='success')
+    # getting relative path to json file
+    from app import create_app
+    app = create_app()
+    static_folder = app.static_folder
+    current_directory = os.getcwd()  
+    json_path = os.path.join(current_directory, static_folder, 'js', 'school.json')
+    
+    with open(json_path) as json_file:
+        school = json.load(json_file) 
 
-    return render_template('index.html', user=current_user)
+    return render_template('index.html', user=current_user, school=school)
 
 @views.route('/delete_note', methods=['POST'])
 def delete_note():

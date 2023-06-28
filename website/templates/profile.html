@@ -58,11 +58,11 @@
      
     <div class="col profile_info"> 
         <div class="h1"></div>
-            {% if count.value > 90 %}
+            {% if count.value >= 90 %}
                 <div> Senior  ({{ count.value }}+credits) </div>  
-            {% elif count.value > 60 %}
+            {% elif 90 > count.value >= 60 %}
                 <div> Junior  ({{ count.value }}+credits) </div>
-            {% elif count.value > 30 %}
+            {% elif 60 > count.value >= 30 %}
                 <div> Junior  ({{ count.value }}+credits) </div>
             {% else %} 
                 <div> Freshman  ({{ count.value }}+credits) </div>
