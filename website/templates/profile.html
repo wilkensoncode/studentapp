@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %} profile{% endblock %}
 
 {% block body %} 
 <div class="pt-3 d-flex justify-content-start profile_wrapper">
@@ -58,13 +59,13 @@
     <div class="col profile_info"> 
         <div class="h1"></div>
             {% if count.value > 90 %}
-            <div> Senior  ({{ count.value }}+credits) </div>  
+                <div> Senior  ({{ count.value }}+credits) </div>  
             {% elif count.value > 60 %}
-            <div> Junior  ({{ count.value }}+credits) </div>
+                <div> Junior  ({{ count.value }}+credits) </div>
             {% elif count.value > 30 %}
-            <div> Junior  ({{ count.value }}+credits) </div>
+                <div> Junior  ({{ count.value }}+credits) </div>
             {% else %} 
-            <div> Freshman  ({{ count.value }}+credits) </div>
+                <div> Freshman  ({{ count.value }}+credits) </div>
             {% endif %}
 
             <div> Active {{user.address}} </div> 
@@ -76,7 +77,17 @@
 </div>
 
 <h3  class="pt-5">Total credits: {{ count.value }} </h3>
-
-
-
+{% if user.notes  %}
+    <h3 class="text-muted  pt-5 text-align pb-2">Notes</h3> 
+    <ul class="list-group list-group-flush pb-5" id="note">
+        {% for note in user.notes %}  
+            <li class="list-group-item">
+                {{note.data}}
+                <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
+                    <span aria-hidden="true" class="text-danger text-bold" onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
+                </button>
+            </li><br>
+        {% endfor %}
+    </ul>
+{% endif %}
 {% endblock %}

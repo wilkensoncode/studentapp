@@ -16,23 +16,13 @@
 
 </h4>
 {% endif %}
-<ul class="list-group list-group-flush" id="note">
-    {% for note in user.notes %} 
-    {{user.notes}}
-    <li class="list-group-item">
-        {{note.data}}
-        <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
-            <span aria-hidden="true" class="text-danger text-bold" onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
-        </button>
-    </li>
-    {% endfor %}
-</ul>
+ 
 
 <form method="POST">
     <textarea class="form-control" name="note" id="note"></textarea>
     <br>
     <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
+        <button type="submit" class="btn btn-primary btn-text">Add Note</button>
     </div>
 </form> 
 

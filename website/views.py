@@ -35,6 +35,7 @@ def delete_note():
     return jsonify({})
 
 @views.route('/courses', methods=['GET', 'POST'])
+@login_required
 def courses():
     if request.method == 'POST':
         course_title = request.form.get('course_title') 
@@ -49,5 +50,6 @@ def courses():
     return render_template('course.html', user=current_user)
 
 @views.route('/profile')
+@login_required
 def profile(): 
     return render_template('profile.html', user=current_user)

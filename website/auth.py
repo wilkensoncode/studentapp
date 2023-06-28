@@ -31,9 +31,8 @@ def login():
 @login_required
 def logout():
     logout_user()
-    # return redirect(url_for('auth.login'))
-    return redirect('/')
-    pass
+    return redirect(url_for('auth.login')) 
+ 
 
 @auth.route('/sign_up',methods=['GET','Post'])
 def sign_up():
