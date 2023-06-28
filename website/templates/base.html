@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <title>{% block title %} {% endblock %}</title>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark container-fluid bg-navbar" >
+        <a class="navbar-brand pl-5 ml-5 h1" href="#">Student</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end pr-5 mr-5" id="navbar">
+            <div class="navbar-nav" >
+                <a  class="nav-item nav-link text-light" id="home" href="/" >
+                     <span class="hover-link">Home</span>
+                </a>
+                <a  class="nav-item nav-link text-light" id="courses" href="/courses">
+                    <span class="hover-link">Courses</span>
+                </a>
+                <a  class="nav-item nav-link text-light" id="profile" href="/profile">
+                    <span class="hover-link">Profile</span>
+                </a>
+                <a  class="nav-item nav-link text-light" id="logout" href="/logout">
+                    <span class="hover-link">Logout</span>
+                </a>
+                
+                <a  class="nav-item nav-link text-light" id="login" href="/login">
+                    <span class="hover-link">Login</span>
+                </a>
+                <a  class="nav-item nav-link text-light" id="sign_up" href="/sign_up">
+                    <span class="hover-link">Sign Up</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div id="flash_message_for_five_second">
+            {% for category, message in messages %}
+            {% if category == 'error' %}
+            <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div> 
+            {% else %}
+            <div class="alert alert-success alert-dismissable fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div> 
+            {% endif %}
+            {% endfor %} 
+        </div>
+        {% endif %}
+    {% endwith %}
+    <div class="container">
+        {% block body %} {%endblock%} 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/index.js')}}"></script>
+</body>
+
+</html>

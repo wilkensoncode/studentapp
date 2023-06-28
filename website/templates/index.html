@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block body %} 
+
+
+{% if user.is_authenticated %}
+<br>
+<h4>  
+    <span class="text-bold pr-5">Welcome {{user.first_name}} </span>
+    <span class="pr-5" align="center">Student ID: {{user.student_id}}</span>
+    {% if user.major %}
+    <span align="center">Major: {{user.major}}</span>
+    {% else %}
+    <span align="center">Major: not selected</span>
+    {% endif %}
+
+</h4>
+{% endif %}
+<ul class="list-group list-group-flush" id="note">
+    {% for note in user.notes %} 
+    {{user.notes}}
+    <li class="list-group-item">
+        {{note.data}}
+        <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
+            <span aria-hidden="true" class="text-danger text-bold" onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+<form method="POST">
+    <textarea class="form-control" name="note" id="note"></textarea>
+    <br>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form> 
+
+{%endblock%} 

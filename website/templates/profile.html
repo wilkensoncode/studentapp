@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+<div class="pt-3 d-flex justify-content-start profile_wrapper">
+    <div class="profile pr-2">
+        <img src="{{url_for('static', filename = 'resources/images/test.png')}}" alt="">  
+    </div>
+    <h3 class="pl-2 align-self-center">
+         <span class="font-weight-bold">First Name: </span>{{user.first_name}}
+    </h3>
+    <h3 class="pl-2 align-self-center">
+         <span class="font-weight-bold">Last Name: </span>{{user.last_name}}
+     </h3>
+    <h3 class="pl-2 align-self-center"> 
+        <span class="font-weight-bold">Student ID:</span> {{user.student_id}}
+    </h3>
+    <h3 class="pl-2 align-self-center">
+        <span class="font-weight-bold">Major: </span>{{user.major}}
+    </h3> 
+    
+</div>
+<hr>
+<span class="h2 text-muted">Bio Information</span>
+<div class="row pt-2"> 
+    <div class="col profile_info">  
+        <div class="font-weight-bold font-size:25px">Email:</div>  
+        <div class="font-weight-bold pr-2">Address:</div> 
+        <div class="font-weight-bold pr-2">City: </div>
+        <div class="font-weight-bold pr-2">State:</div> 
+        <div class="font-weight-bold pr-2">Zip Code:</div> 
+    </div> 
+    <div class="col profile_info"> 
+        <div class="h1"></div>
+            <div><a href="mailto:{{user.email}}">{{user.email}}</a></div>  
+            <div> {{user.address}} </div> 
+            <div> {{user.city}}  </div>
+            <div> {{user.state}}  </div>
+            <div> {{user.zip_code}} </div> 
+    </div>  
+     
+</div>
+<span class="h2 text-muted">General Information</span>
+<div class="row pt-2"> 
+    <div class="col profile_info">  
+        <div class="font-weight-bold font-size:25px pr-2">Class:</div>  
+        <div class="font-weight-bold pr-2 text-sm">Status:</div> 
+        <div class="font-weight-bold pr-2">Student Type: </div>
+        <div class="font-weight-bold pr-2">Residency:</div> 
+        <div class="font-weight-bold pr-2">First Term Attended:</div> 
+        <div class="font-weight-bold pr-2">Last Term Attended:</div> 
+    </div> 
+   
+    {% set count = namespace(value=0) %}
+    {% for credit in user.courses %}
+        {% set count.value = count.value + credit.credit %}
+    {% endfor %} 
+     
+    <div class="col profile_info"> 
+        <div class="h1"></div>
+            {% if count.value > 90 %}
+            <div> Senior  ({{ count.value }}+credits) </div>  
+            {% elif count.value > 60 %}
+            <div> Junior  ({{ count.value }}+credits) </div>
+            {% elif count.value > 30 %}
+            <div> Junior  ({{ count.value }}+credits) </div>
+            {% else %} 
+            <div> Freshman  ({{ count.value }}+credits) </div>
+            {% endif %}
+
+            <div> Active {{user.address}} </div> 
+            <div> Continuing/transfer/new{{user.city}}  </div>
+            <div> Full-time/Part-time In-State {{user.state}}  </div>
+            <div> Fall 2023 {{user.zip_code}} </div> 
+            <div> Fall 2024{{user.zip_code}} </div> 
+    </div> 
+</div>
+
+<h3  class="pt-5">Total credits: {{ count.value }} </h3>
+
+
+
+{% endblock %}
