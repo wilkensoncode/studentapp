@@ -1,6 +1,7 @@
 :root {
-    --dark:#353535;
-    --text:#00ffff;
+    --dark: #353535;
+    --text: #00ffff;
+    --white:#ffffff;
      
 }
 body {
@@ -52,4 +53,29 @@ body {
     background-color: #d7d7d7;
     border-radius: 10%; */
 }
+.moto {
+    font-size: 1.5em; 
+}
+.name-sc {
+    font-size: 2em;
+}
+.dot {
+    font-size: 2em;
+}
+.school {
+    /* border: #00ffff solid; */
+    /* border-radius: 2.5%; */
+    box-shadow:1px 2px 2px #353535;
+    background-color: var(--dark) !important;
+     
+}
+.text-color {
+    color: var(--text);
+}
+.text-cw {
+    color: var(--white);
+}
+.centered-form { 
+    border: #00ffff sodid;
+  }
 

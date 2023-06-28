@@ -1,29 +1,19 @@
 {% extends 'base.html' %}
+
 {% block title %} Home {% endblock %}
-{% block body %} 
 
-
-{% if user.is_authenticated %}
-<br>
-<h4>  
-    <span class="text-bold pr-5">Welcome {{user.first_name}} </span>
-    <span class="pr-5" align="center">Student ID: {{user.student_id}}</span>
-    {% if user.major %}
-    <span align="center">Major: {{user.major}}</span>
-    {% else %}
-    <span align="center">Major: not selected</span>
-    {% endif %}
-
-</h4>
-{% endif %}
- 
-
-<form method="POST">
-    <textarea class="form-control" name="note" id="note"></textarea>
-    <br>
-    <div align="center">
-        <button type="submit" class="btn btn-primary btn-text">Add Note</button>
+{% block body %}
+<div class="container pb-3 pt-3">
+    <div class="row justify-content-center align-items-center">
+        <div class="col ">
+            <form method="POST">
+                <div class="text-center d-flex justify-content-center align-items-center">
+                    <textarea name="note" id="note" cols="50"></textarea>
+                    <button type="submit" class="btn btn-text ml-5">Add Note</button>
+                </div> 
+            </form>
+        </div>
     </div>
-</form> 
-
-{%endblock%} 
+</div>
+{% include 'school.html' %}
+{% endblock %}

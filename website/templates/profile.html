@@ -78,7 +78,8 @@
 
 <h3  class="pt-5">Total credits: {{ count.value }} </h3>
 {% if user.notes  %}
-    <h3 class="text-muted  pt-5 text-align pb-2">Notes</h3> 
+<hr>
+    <h3 class="text-muted  pt-2 pb-2">Notes</h3> 
     <ul class="list-group list-group-flush pb-5" id="note">
         {% for note in user.notes %}  
             <li class="list-group-item">
