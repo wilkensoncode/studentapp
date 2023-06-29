@@ -40,9 +40,13 @@ body {
     color: var(--text);
     font-weight:bold;
 }
+.btn-text:hover{
+    border: solid var(--text) 1px;
+}
 
 .btn-align , .text-align {
     text-align: center;
+
 }
 
 .course {
@@ -57,7 +61,7 @@ body {
     font-size: 1.5em; 
 }
 .name-sc {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .dot {
     font-size: 2em;
@@ -74,8 +78,33 @@ body {
 }
 .text-cw {
     color: var(--white);
+    color: var(--dark) !important;
 }
 .centered-form { 
     border: #00ffff sodid;
-  }
+}
+.ai_img {
+    width: 100%;
+}
+.text-space {
+    letter-spacing: .25em;
+}
+.wrapper-footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+.club {
+    width: 200px;
+}
 
+.organize-num {
+   font-weight: bold;
+   font-size: 2em;
+   color: var(--text);
+    
+}
+.club { 
+    font-size: 2em;
+    color:var(--dark);
+}

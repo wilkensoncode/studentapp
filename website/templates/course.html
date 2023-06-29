@@ -1,50 +1,46 @@
 {% extends 'base.html' %}
 {% block title %} courses {% endblock %}
 {% block body %}
-<h3 align="center" class="pt-5 pb-4 text-muted">Add Course</h3><hr> 
+<h3 align="center" class="pt-5 pb-4 text-muted">Add Course</h3>
+<hr>
 {% for course in user.courses %}
 
 <div class="row">
     <div class="col courses d-flex justify-content-center">
-        <div class="col">  
-            <div class="font-weight-bold font-size:25px"> Course Number:</div>  
-            <div class="font-weight-bold pr-2"> Course Title:</div> 
-            <div class="font-weight-bold pr-2"> Course Date:</div>  
-        </div> 
-        <div class="col ">  
-            <div> {{course.course_number}} </div> 
-            <div> {{course.course_title}}  </div>
-            <div> {{course.course_date}}  </div> 
-            <div> {{course.course_credit}}  </div> 
+        <div class="col">
+            <div class="font-weight-bold font-size:25px"> Course Number:</div>
+            <div class="font-weight-bold pr-2"> Course Title:</div>
+            <div class="font-weight-bold pr-2"> Course Date:</div>
         </div>
-        
-        <div class="col">   
-            <div> {{course.course_credit}}  </div> 
-            <div> {{course.course_credit}}  </div> 
-            <div> {{course.course_credit}}  </div> 
+        <div class="col ">
+            <div> {{course.course_number}} </div>
+            <div> {{course.course_title}} </div>
+            <div> {{course.course_date}} </div>
+            <div> {{course.course_credit}} </div>
+        </div>
+
+        <div class="col">
+            <div> {{course.course_credit}} </div>
+            <div> {{course.course_credit}} </div>
+            <div> {{course.course_credit}} </div>
             <div class="font-weight-bold pr-2"> Course Credit: <span class="pl-2"> {{course.credit}}</span></div>
-        </div> 
+        </div>
     </div>
 </div>
-<hr> 
+<hr>
 
 {% endfor %}
 
 
 <form action="" method="POST" class="mt-5">
     <div class="form-row">
-        <div class="form-group col"> 
+        <div class="form-group col">
             <label for="course">Course Title</label>
-            <input class="form-control"
-            type="text"  
-            id="course"
-            name="course_title" 
-            placeholder="add course (Math)"
-            /> 
+            <input class="form-control" type="text" id="course" name="course_title" placeholder="add course (Math)" />
         </div>
-    </div> 
-    <div class="btn-align">
-        <button class="btn btn-primary btn-text" type="submit">Add Course</button> 
+    </div>
+    <div class="btn-align pb-5">
+        <button class="btn bg-dark btn-text" type="submit">Add Course</button>
     </div>
 </form>
 {% endblock %}

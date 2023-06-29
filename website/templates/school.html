@@ -1,26 +1,87 @@
- 
-{% block body %} 
-    {% for key, data in school.items() %} 
-    {{data.url}}
-        <ul> 
-                <div class="row bg-dark text-light school">
-                    <div class="col font-weight-bold pt-3">
-                        <div class="moto text-primary">
-                            {{data.moto}}
-                        </div>
-                        <div class="font-weight-bold name-sc text-primary">
-                        {{key}} <span class="dot">.</span> {{data.state}}
-                        </div> 
-                    </div>
-                    <div class="col pb-2 pt-3">
-                        <p class="h5">
-                            {% for line in data.text %}
-                                {{line}} 
-                            {% endfor %}
-                            <a href="{{data.major_url}}" target="_blank">Majors/Degrees</a>
-                        </p>
-                    </div> 
-                </div> 
-        </ul>
-    {% endfor %} 
+{% block body %}
+{% for key, data in school.items() %}
+{{data.url}}
+<ul>
+    <span class="moto text-primary text-space">
+        {{data.moto}}
+    </span>
+    <span class="font-weight-bold name-sc text-primary  text-space">
+        {{key}} <span class="dot">.</span> {{data.state}}
+    </span>
+    <div class="row bg-darks text-cw ">
+        <div class="col font-weight-bold pt-3">
+            <div>
+                <img class="ai_img" src="{{data.img_1}}" alt="">
+            </div>
+        </div>
+        <div class="col pb-2 pt-3">
+            <p class="h5">
+                <span class="text-muted ">Quick Links</span>
+                {% for name , link in data.links.items() %}
+            <div class="pb-2">
+                <a href="{{link}}" target="_blank">{{name}}</a>
+            </div>
+            {% endfor %}
+            <a href="{{data.major_url}}" target="_blank">Majors/Degrees</a>
+            </p>
+        </div>
+        <div class="col pb-2 pt-3">
+            <p class="h5">
+                <span class="text-muted ">Student Services</span>
+                {% for name_1 , link_1 in data.links_1.items() %}
+            <div class="pb-2">
+                <a href="{{link_1}}" target="_blank">{{name_1}}</a>
+            </div>
+            {% endfor %}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col font-weight-bold pt-3">
+            <div>
+                {% for line in data.text_1 %}
+                {{line}}
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="col pb-2 pt-3">
+            <div class="">
+                <img class="ai_img" src="{{data.img}}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col font-weight-bold pt-3">
+
+
+        </div>
+        <div class="col pb-2 pt-3">
+            <div class="">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <div class="organize-num text-primary">150+</div>
+                <div class="club">Clubs & Organizations</div>
+            </div>
+            <div class="col text-center">
+                <div class="organize-num text-primary">225+</div>
+                <div class="club">Academic Programs</div>
+            </div>
+            <div class="col text-center">
+                <div class="organize-num text-primary">12:1</div>
+                <div class="club">Student-to-Faculty Ratio</div>
+            </div>
+            <div class="col text-center">
+                <div class="organize-num text-primary">19</div>
+                <div class="club">NCAA<span style="opacity: 0;">,</span>Division II Athletic Teams</div>
+            </div>
+        </div>
+
+    </div>
+</ul>
+{% endfor %}
 {% endblock %}

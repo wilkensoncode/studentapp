@@ -14,36 +14,47 @@
             "Southern is committed to academic excellence, access,", 
             "social justice, and service for the public good."
         ],
-        "major_url": "https://www.southernct.edu/admissions"
-    },
-
-    "EASTERN":{
-        "moto":"THE PATH TO YOUR FUTURE STARTS AT EASTERN!",
-        "state": "Connecticut",
-        "text":[
-            " Why Eastern? THE PATH TO YOUR FUTURE STARTS AT",
-            " EASTERN! Eastern is a public university with a private ",
-            " college atmosphere. Live and study on a beautiful",
-            " campus, get to know your professors and make lifelong", 
-            " friends. Gain hands-on experience in your major as you", 
-            " prepare for a successful career. Fit in and stand out!",
-            " Check out the Degrees of Difference available on our page."
+        "major_url": "https://www.southernct.edu/admissions",
+        "img":"/static/resources/images/ai.png",
+        "text_1": [
+            "Students have the power to shape the world through their actions. By",
+            "engaging in education, embracing diversity, and promoting empathy,",
+            "they can foster positive change. They should advocate for causes",
+            "they believe in, speak up for justice, and actively participate in",
+            "community service. By nurturing their skills and pursuing their",
+            "passions, students can become leaders who inspire others, making a",
+            "lasting impact on the world and creating a brighter future for all." 
+        ], 
+        "img_1":"/static/resources/images/scsu.png",
+        "text_2": [
+            "Students have the power to shape the world through their actions. By",
+            "engaging in education, embracing diversity, and promoting empathy,",
+            "they can foster positive change. They should advocate for causes",
+            "they believe in, speak up for justice, and actively participate in",
+            "community service. By nurturing their skills and pursuing their",
+            "passions, students can become leaders who inspire others, making a",
+            "lasting impact on the world and creating a brighter future for all." 
         ],
-        "major_url": "https://www.easternct.edu/programs/index.html"
-    },
-
-    "WESTERN": {
-        "moto":"Transform Your Life Be inspired by WCSU success stories.",
-        "state": "Connecticut",
-        "text":[
-            " We're laser-focused on making sure motivated students",
-            " like you succeed in the career you want. Whether you",
-            " seek a Bachelor's, Master's or Doctorate degree, WCSU",
-            " and our Career Success Center helps you develop your", 
-            " professional and leadership skills.", 
-            " Prepare for success with a practical, career-focused education",
-            " Check out the Degrees of Difference available on our page."
-        ],
-        "major_url": "https://www.wcsu.edu/admissions/programs/"
+        "links": {
+            "MySCSU": "https://outlook.office.com/mail",
+            "Class Schedules":"https://ssb-prod.ec.southernct.edu/PROD/byskcsob.P_TermSel",
+            "Parking Permit Applications":"https://inside.southernct.edu/university-police/services#parking-permit",
+            "OwlConnect":"https://owlconnect.southernct.edu/",
+            "JOBSs":"https://southernct-csm.symplicity.com/students/?signin_tab=0",
+            "Academic Catalog":"http://catalog.southernct.edu/",
+            "Help Desk": "https://helpdesk.southernct.edu/shp/southernct/home",
+            "Library":"https://libguides.southernct.edu/home/",
+            "Banner / bannerWeb": "https://myapps.microsoft.com/"
+        },
+        "links_1": {
+            "OrieOrientation, Transition and Family Engagementntation": "https://www.southernct.edu/orientation",
+            "Center for Academic Success and Accessibility Services (CASAS)":"https://inside.southernct.edu/casas",
+            "Financial Advising":"https://inside.southernct.edu/financial-advising",
+            "Dean of Students Office":"https://inside.southernct.edu/dean-of-students",
+            "Registrar's Office":"https://inside.southernct.edu/onestop/registration",
+            "Academic Catalog":"http://catalog.southernct.edu/",
+            "Center for Educational and Assistive Technology": "https://inside.southernct.edu/ceat"
+                         
+        }    
     }
 }

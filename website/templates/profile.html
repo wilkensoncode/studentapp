@@ -1,103 +1,105 @@
 {% extends 'base.html' %}
 {% block title %} profile{% endblock %}
 
-{% block body %} 
+{% block body %}
 <div class="pt-3 d-flex justify-content-start profile_wrapper">
     <div class="profile pr-2">
-        <img src="{{url_for('static', filename = 'resources/images/test.png')}}" alt="">  
+        <img src="{{url_for('static', filename = 'resources/images/test.png')}}" alt="">
     </div>
     <h3 class="pl-2 align-self-center">
-         <span class="font-weight-bold">First Name: </span>{{user.first_name}}
+        <span class="font-weight-bold">First Name: </span>{{user.first_name}}
     </h3>
     <h3 class="pl-2 align-self-center">
-         <span class="font-weight-bold">Last Name: </span>{{user.last_name}}
-     </h3>
-    <h3 class="pl-2 align-self-center"> 
+        <span class="font-weight-bold">Last Name: </span>{{user.last_name}}
+    </h3>
+    <h3 class="pl-2 align-self-center">
         <span class="font-weight-bold">Student ID:</span> {{user.student_id}}
     </h3>
     <h3 class="pl-2 align-self-center">
         <span class="font-weight-bold">Major: </span>{{user.major}}
-    </h3> 
-    
+    </h3>
+
 </div>
 <hr>
 <span class="h2 text-muted">Bio Information</span>
-<div class="row pt-2"> 
-    <div class="col profile_info">  
-        <div class="font-weight-bold font-size:25px">Email:</div>  
-        <div class="font-weight-bold pr-2">Address:</div> 
+<div class="row pt-2">
+    <div class="col profile_info">
+        <div class="font-weight-bold font-size:25px">Email:</div>
+        <div class="font-weight-bold pr-2">Address:</div>
         <div class="font-weight-bold pr-2">City: </div>
-        <div class="font-weight-bold pr-2">State:</div> 
-        <div class="font-weight-bold pr-2">Zip Code:</div> 
-    </div> 
-    <div class="col profile_info"> 
+        <div class="font-weight-bold pr-2">State:</div>
+        <div class="font-weight-bold pr-2">Zip Code:</div>
+    </div>
+    <div class="col profile_info">
         <div class="h1"></div>
-            <div><a href="mailto:{{user.email}}">{{user.email}}</a></div>  
-            <div> {{user.address}} </div> 
-            <div> {{user.city}}  </div>
-            <div> {{user.state}}  </div>
-            <div> {{user.zip_code}} </div> 
-    </div>  
-     
+        <div><a href="mailto:{{user.email}}">{{user.email}}</a></div>
+        <div> {{user.address}} </div>
+        <div> {{user.city}} </div>
+        <div> {{user.state}} </div>
+        <div> {{user.zip_code}} </div>
+    </div>
+
 </div>
 <span class="h2 text-muted">General Information</span>
-<div class="row pt-2"> 
-    <div class="col profile_info">  
-        <div class="font-weight-bold font-size:25px pr-2">Class:</div>  
-        <div class="font-weight-bold pr-2 text-sm">Status:</div> 
+<div class="row pt-2">
+    <div class="col profile_info">
+        <div class="font-weight-bold font-size:25px pr-2">Class:</div>
+        <div class="font-weight-bold pr-2 text-sm">Status:</div>
         <div class="font-weight-bold pr-2">Student Type: </div>
-        <div class="font-weight-bold pr-2">Residency:</div> 
-        <div class="font-weight-bold pr-2">First Term Attended:</div> 
-        <div class="font-weight-bold pr-2">Last Term Attended:</div> 
-    </div> 
-   
+        <div class="font-weight-bold pr-2">Residency:</div>
+        <div class="font-weight-bold pr-2">First Term Attended:</div>
+        <div class="font-weight-bold pr-2">Last Term Attended:</div>
+    </div>
+
     {% set count = namespace(value=0) %}
     {% for credit in user.courses %}
-        {% set count.value = count.value + credit.credit %}
-    {% endfor %} 
-     
-    <div class="col profile_info"> 
-        <div class="h1"></div>
-            {% if count.value >= 90 %}
-                <div> Senior  ({{ count.value }}+credits) </div>  
-            {% elif 90 > count.value >= 60 %}
-                <div> Junior  ({{ count.value }}+credits) </div>
-            {% elif 60 > count.value >= 30 %}
-                <div> Junior  ({{ count.value }}+credits) </div>
-            {% else %} 
-                <div> Freshman  ({{ count.value }}+credits) </div>
-            {% endif %}
+    {% set count.value = count.value + credit.credit %}
+    {% endfor %}
 
-            {% if count.value >= 60 %}
-            <div>Transfer Student</div>  
-            {% elif 25 < count.value < 60 %}
-            <div> Continuing Student</div>
-            {% else %}
-            <div> New Student</div>
-            {% endif %}
-            {% if not count.value <= 11 %}
-            <div> Full-time In-State </div>
-            {% else %}
-            <div> Part-time Out of State </div>
-            {% endif %}
-            <div> Fall 2023 Fall 2023 </div> 
-            <div> Spring 2024 </div> 
-    </div> 
+    <div class="col profile_info">
+        <div class="h1"></div>
+        {% if count.value >= 90 %}
+        <div> Senior ({{ count.value }}+credits) </div>
+        {% elif 90 > count.value >= 60 %}
+        <div> Junior ({{ count.value }}+credits) </div>
+        {% elif 60 > count.value >= 30 %}
+        <div> Junior ({{ count.value }}+credits) </div>
+        {% else %}
+        <div> Freshman ({{ count.value }}+credits) </div>
+        {% endif %}
+
+        {% if count.value >= 60 %}
+        <div>Transfer Student</div>
+        {% elif 25 < count.value < 60 %} <div> Continuing Student
+    </div>
+    {% else %}
+    <div> New Student</div>
+    {% endif %}
+    {% if not count.value <= 11 %} <div> Full-time In-State
+</div>
+{% else %}
+<div> Part-time Out of State </div>
+{% endif %}
+<div> Fall 2023 Fall 2023 </div>
+<div> Spring 2024 </div>
+</div>
 </div>
 
-<h3  class="pt-5">Total credits: {{ count.value }} </h3>
-{% if user.notes  %}
+<h3 class="pt-5">Total credits: {{ count.value }} </h3>
+{% if user.notes %}
 <hr>
-    <h3 class="text-muted  pt-2 pb-2">Notes</h3> 
-    <ul class="list-group list-group-flush pb-5" id="note">
-        {% for note in user.notes %}  
-            <li class="list-group-item">
-                {{note.data}}
-                <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
-                    <span aria-hidden="true" class="text-danger text-bold" onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
-                </button>
-            </li><br>
-        {% endfor %}
-    </ul>
+<h3 class="text-muted  pt-2 pb-2">Notes</h3>
+<ul class="list-group list-group-flush pb-5" id="note">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+        {{note.data}}
+        <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
+            <span aria-hidden="true" class="text-danger text-bold"
+                onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
+        </button>
+    </li><br>
+    {% endfor %}
+</ul>
 {% endif %}
+
 {% endblock %}

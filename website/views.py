@@ -6,6 +6,7 @@ from .models import *
 from .helper_db import db
 
 
+
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
@@ -21,7 +22,7 @@ def home():
             db.session.commit()
             flash('Note added', category='success')
     # getting relative path to json file
-    from app import create_app
+    from app import create_app 
     app = create_app()
     static_folder = app.static_folder
     current_directory = os.getcwd()  
@@ -30,7 +31,7 @@ def home():
     with open(json_path) as json_file:
         school = json.load(json_file) 
 
-    return render_template('index.html', user=current_user, school=school)
+    return render_template('index.html', user=current_user, school=school, zip=zip)
 
 @views.route('/delete_note', methods=['POST'])
 def delete_note():
