@@ -1,118 +1,78 @@
 {% extends 'base.html' %}
 {% block title %}Sign_up{% endblock %}
-{% block body %} 
+{% block body %}
 
 <form action="" method="POST" class="mt-5">
-    <h3 align="center" class="pb-5 text-muted">Sign up</h3> 
-    <div class="form-row"> 
+    <h3 align="center" class="pb-5 text-muted">Sign up</h3>
+    <div class="form-row">
         <div class="form-group col">
             <label for="first_name">First Name</label>
-            <input type="text" 
-            class="form-control" 
-            id="first_name" 
-            name="first_name" 
-            placeholder="First name"
-            />
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" />
         </div>
-        
+
         <div class="form-group col">
             <label for="last_name">Last Name</label>
-          <input type="text" 
-          class="form-control" 
-          id="last_name"  
-          name="last_name"  
-          placeholder="Last name"
-          />
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name" />
         </div>
-    </div> 
+    </div>
 
-    <div class="form-row"> 
+    <div class="form-row">
         <div class="form-group col">
             <label for="email">Email</label>
-            <input type="email"
-            class="form-control"
-            id="email" name="email"  
-            placeholder="Email Address"
-            />
-        </div> 
-        <div class="form-group col">
-            <label for="student_id">Student ID</label>
-            <input type="text" 
-            class="form-control" 
-            id="student_id" 
-            name="student_id" 
-            placeholder="student ID"
-            />
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" />
         </div>
-    </div> 
- 
+        <div class="form-group col">
+            <label for="role">Role</label>
+            <input type="text" class="form-control" id="role" name="role" placeholder="student / staff" />
+        </div>
+    </div>
+
     <div class="form-row">
-        <div class="form-group col"> 
+        <div class="form-group col">
             <label for="password_one">Password</label>
-            <input class="form-control"
-            type="password"  
-            id="password_one"
-            name="password_one" 
-            placeholder="Enter password"
-            /> 
+            <input class="form-control" type="password" id="password_one" name="password_one"
+                placeholder="Enter password" />
         </div>
 
         <div class="form-group col">
             <label for="password_two">Password (confirm)</label>
-            <input class="form-control"
-            type="password"
-            id="password_two"  
-            name="password_two"  
-            placeholder="Confirm password"
-            /> 
-        </div> 
-    </div> 
- 
-    <div class="form-row"> 
+            <input class="form-control" type="password" id="password_two" name="password_two"
+                placeholder="Confirm password" />
+        </div>
+    </div>
+
+    <div class="form-row">
         <div class="form-group col">
             <label for="address">Address</label>
-            <input class="form-control"
-            type="text"
-            id="address"  
-            name="address"  
-            placeholder="124 Main St"
-            /> 
+            <input class="form-control" type="text" id="address" name="address" placeholder="124 Main St" />
         </div>
-    </div> 
-   
-    <div class="form-row"> 
+    </div>
+
+    <div class="form-row">
         <div class="form-group col">
             <label for="city">City</label>
-            <input class="form-control"
-            type="text"
-            id="city"  
-            name="city"  
-            placeholder="Texas"
-            /> 
+            <input class="form-control" type="text" id="city" name="city" placeholder="Texas" />
         </div>
         <div class="form-group col">
             <label for="state">State</label>
-            <input class="form-control"
-                type="text"
-                id="state"  
-                name="state"  
-                placeholder="Connticut"
-            />
+            <input class="form-control" type="text" id="state" name="state" placeholder="Connticut" />
         </div>
         <div class="form-group col">
             <label for="zip_code">Zip Code</label>
-            <input class="form-control"
-            type="number"
-            id="address"  
-            name="zip_code"  
-            placeholder="06689"
-            /> 
+            <input class="form-control" type="number" id="address" name="zip_code" placeholder="06689" />
         </div>
-    </div> 
-   
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="image">Upload Image</label>
+            <input class="form-control-file" type="file" id="image" name="image" accept="image/*" />
+        </div>
+    </div>
+
     <br>
-    <div class="btn-align"> 
-    <button class="btn bg-dark btn-text" type="submit">Sign up</button> 
+    <div class="btn-align">
+        <button class="btn bg-dark btn-text" type="submit">Sign up</button>
     </div>
 </form>
-{%endblock%} 
+{%endblock%}

@@ -9,8 +9,7 @@ from .helper_db import db
 
 views = Blueprint('views', __name__)
 
-@views.route('/', methods=['GET', 'POST'])
-@login_required
+@views.route('/', methods=['GET', 'POST']) 
 def home():
     if request.method == 'POST':
         note = request.form.get('note')

@@ -24,29 +24,8 @@ class Course(db.Model):
         return random.randint(1000, 9999)
     def genrate_course_credit():
         # generate between 1-4digits long integer 
-        return random.randint(1, 4)
-   
-    
-    
-class Department(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    csc_department = db.Column(db.String(250), nullable=False)
-    bis_departmrnt = db.Column(db.String(250), nullable=False)
-    sci_departmrnt = db.Column(db.String(250), nullable=False)
-    phi_departmrnt = db.Column(db.String(250), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+        return random.randint(1, 4) 
 
-class Major(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    csc_major = db.Column(db.String(250))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    
-
-class Image(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    profile = db.Column(db.LargeBinary)
-    url = db.Column(db.String(250))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class GeneralInformation(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -58,33 +37,86 @@ class GeneralInformation(db.Model):
     last_term = db.Column(db.String(250), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    # def status():
-    #     rand_num = random.randint(0, 1)
-    #     if rand_num == 0:
-    #         return "Inactive"
-    #     return "Active"  
-
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(250), unique=True)
     first_name = db.Column(db.String(250), nullable=False)
     last_name = db.Column(db.String(250), nullable=False)
-    student_id = db.Column(db.String(250), unique=True, nullable=False)
+    student_id = db.Column(db.String(250))
+    role = db.Column(db.String(250), unique=True, nullable=False)
     password = db.Column(db.String(2500), nullable=False)
     address = db.Column(db.String(250), nullable=False)
     city = db.Column(db.String(250), nullable=False)
     state = db.Column(db.String(250), nullable=False)
     zip_code = db.Column(db.String(250), nullable=False)
+    image = db.Column(db.String(250))
+    major = db.Column(db.String(250))
 
     notes = db.relationship('Note')
-    courses = db.relationship('Course')
-    image = db.relationship('Image')
-    majors = db.relationship('Major')
+    courses = db.relationship('Course')  
     GeneralInformation = db.relationship('GeneralInformation')
-    
 
+    def __init__(self, email, first_name, last_name, student_id, major, role, password, address, city, state, zip_code, image=None):
+        self.email = email
+        self.first_name = first_name
+        self.last_name = last_name
+        self.student_id = student_id
+        self.role = role
+        self.password = password
+        self.address = address
+        self.city = city
+        self.state = state
+        self.zip_code = zip_code
+        self.image = image
+        self.major = major
+
+    @staticmethod
     def generate_student_id():
-        # generate 8-digits long integer
-        return random.randint(10000000, 99999999)
-    
+        # generate 8-digit long integer
+        return str(random.randint(10000000, 99999999))
+
+    @staticmethod
+    def generate_random_major():
+        majors_degrees = [
+            "Accounting",
+            "Aerospace Engineering",
+            "Anthropology",
+            "Architecture",
+            "Art History",
+            "Biology",
+            "Business Administration",
+            "Chemical Engineering",
+            "Chemistry",
+            "Civil Engineering",
+            "Communications",
+            "Computer Science",
+            "Criminal Justice",
+            "Economics",
+            "Education",
+            "Electrical Engineering",
+            "English Literature",
+            "Environmental Science",
+            "Finance",
+            "Graphic Design",
+            "History",
+            "Human Resources",
+            "Information Technology",
+            "International Relations",
+            "Journalism",
+            "Marketing",
+            "Mathematics",
+            "Mechanical Engineering",
+            "Music",
+            "Nursing",
+            "Philosophy",
+            "Physics",
+            "Political Science",
+            "Psychology",
+            "Sociology",
+            "Theater Arts",
+            "Veterinary Medicine"
+        ]
+        return random.choice(majors_degrees)
+
+   

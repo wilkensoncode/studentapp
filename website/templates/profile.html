@@ -59,29 +59,29 @@
     <div class="col profile_info">
         <div class="h1"></div>
         {% if count.value >= 90 %}
-        <div> Senior ({{ count.value }}+credits) </div>
+        <div> Senior (90+ credits) </div>
         {% elif 90 > count.value >= 60 %}
-        <div> Junior ({{ count.value }}+credits) </div>
-        {% elif 60 > count.value >= 30 %}
-        <div> Junior ({{ count.value }}+credits) </div>
-        {% else %}
-        <div> Freshman ({{ count.value }}+credits) </div>
-        {% endif %}
+        <div> Junior (< 60 - 90 credits) </div>
+                {% elif 60 > count.value >= 30 %}
+                <div> Junior (30 - 60 credits) </div>
+                {% else %}
+                <div> Freshman (0 - 30 credits) </div>
+                {% endif %}
 
-        {% if count.value >= 60 %}
-        <div>Transfer Student</div>
-        {% elif 25 < count.value < 60 %} <div> Continuing Student
+                {% if count.value >= 60 %}
+                <div>Transfer Student</div>
+                {% elif 25 < count.value < 60 %} <div> Continuing Student
+        </div>
+        {% else %}
+        <div> New Student</div>
+        {% endif %}
+        {% if not count.value <= 11 %} <div> Full-time In-State
     </div>
     {% else %}
-    <div> New Student</div>
+    <div> Part-time Out of State </div>
     {% endif %}
-    {% if not count.value <= 11 %} <div> Full-time In-State
-</div>
-{% else %}
-<div> Part-time Out of State </div>
-{% endif %}
-<div> Fall 2023 Fall 2023 </div>
-<div> Spring 2024 </div>
+    <div> Fall 2023 Fall 2023 </div>
+    <div> Spring 2024 </div>
 </div>
 </div>
 
@@ -100,6 +100,7 @@
     </li><br>
     {% endfor %}
 </ul>
+
 {% endif %}
 
 {% endblock %}
