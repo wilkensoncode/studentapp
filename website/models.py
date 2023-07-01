@@ -44,7 +44,7 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(250), nullable=False)
     last_name = db.Column(db.String(250), nullable=False)
     student_id = db.Column(db.String(250))
-    role = db.Column(db.String(250), unique=True, nullable=False)
+    role = db.Column(db.String(250), nullable=False)
     password = db.Column(db.String(2500), nullable=False)
     address = db.Column(db.String(250), nullable=False)
     city = db.Column(db.String(250), nullable=False)
