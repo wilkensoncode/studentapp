@@ -20,27 +20,27 @@
 
 
 {% for _, club in organization.items() %}
-
-<ul>
-    <div class="organization-wrapper">
-        <div class="row   p-3">
-            <div class="d-flex">
-                <div class="organization-img pl-2 pr-2 align-self-center">
-                    <img src="{{ club['img' ~ loop.index] }}" alt="">
-                </div>
-                <div class="col p-3">
-                    <div class="font-weight-bold">{{ club['title' ~ loop.index] }}</div>
-                    <div>
-                        {% for line in club['text' ~ loop.index] %}
-                        {{ line }}
-                        {% endfor %}
+<a href="{{club.url}}" target="_blank" class="organization-link">
+    <ul>
+        <div class="organization-wrapper">
+            <div class="row   p-3">
+                <div class="d-flex">
+                    <div class="organization-img pl-2 pr-2 align-self-center">
+                        <img src="{{ club['img' ~ loop.index] }}" alt="">
+                    </div>
+                    <div class="col p-3">
+                        <div class="font-weight-bold">{{ club['title' ~ loop.index] }}</div>
+                        <div>
+                            {% for line in club['text' ~ loop.index] %}
+                            {{ line }}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-</ul>
+    </ul>
+</a>
 
 {% endfor %}
 

@@ -5,7 +5,8 @@
         "text1": [
             "We are a student-led organization dedicated to helping Southern students become more familiar with the accounting profession and",
             "providing Business students with various professional development and networking opportunities."
-        ]
+        ],
+        "url":"https://owlconnect.southernct.edu/organization/accountingsociety"
 
     },
     "data2": {
@@ -14,14 +15,53 @@
         "text2": [
             "Active Minds is a mental health awareness and advocacy group focused on breaking down negative stigmas associated",
             "with mental illness."
-        ] 
+        ] ,
+        "url":"https://owlconnect.southernct.edu/organization/activeminds"
     }, 
+
     "data3":{
         "img3":"static/resources/organization/casas.png",
         "title3":"CASAS - Center for Academic Success and Accessibility Services",
         "text3": [
             "CASAS (Center for Academic Success and Accessibility Services)"
-        ]
+        ],
+        "url":"https://owlconnect.southernct.edu/organization/academicsuccesscenter"
+    },
+
+    "data4":{
+        "img4":"static/resources/organization/caribbean.png",
+        "title4":"Caribbean Student Association",
+        "text4": [
+            "This organization focuses on enlightening those who are  interested in acquiring insight on the Caribbean Islands. Our",
+            "mission is to unite Caribbean students who share a commoncultural interest, to raise cultural awareness and",
+            " sensitivity."
+        ],
+        "url":"https://owlconnect.southernct.edu/organization/caribbeanstudentassociation"
+    },
+
+    "data5":{
+        "img5":"static/resources/organization/csclub.png",
+        "title5":"Computer Science Club",
+        "text5": [
+            "The Computer Science Club provides a unique and fun environment for people interested in learning about",
+            "     new technology, programming, or any aspect of the digital world." 
+        ],
+        "url":"https://owlconnect.southernct.edu/organization/computerscienceclub"
+    },
+
+    "data6":{
+        "img6":"static/resources/organization/entrepreneur.png",
+        "title6":"STEM Entrepreneurship Club",
+        "text6": [
+            "STEM Entrepreneurship Club" 
+        ],
+        "url":"https://owlconnect.southernct.edu/organization/steme"
     } 
-}
+
+    
+
+
+ } 
+ 
+
 

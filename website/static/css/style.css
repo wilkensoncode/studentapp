@@ -34,10 +34,25 @@ body {
 }
 .organization-wrapper {
     background-color: #ffffff;
-    box-shadow: 0 0  30px var(--shadow_hover);
+    box-shadow: 0 0  10px var(--shadow_hover);
     /* transition: box-shadow .3s ease-in; */
 }
- 
+.organization-wrapper:hover {
+     
+    background-color: #ffffff;
+    box-shadow: 0 0  30px var(--dark);
+    transition: box-shadow .3s ease-in;
+}
+
+.organization-link { 
+    text-decoration: none;
+    color: inherit;
+}
+.organization-link:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark);
+}
 .profile_info {
     font-size: 17px;
 }
