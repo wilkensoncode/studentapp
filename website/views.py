@@ -9,8 +9,13 @@ from .helper_db import db
 
 views = Blueprint('views', __name__)
 
-@views.route('/', methods=['GET', 'POST']) 
-def home():
+@views.route('/organizations', methods=['GET', 'POST']) 
+def organizations():
+    from app import create_app 
+    app = create_app()
+    static_folder = app.static_folder
+    current_directory = os.getcwd() 
+
     if request.method == 'POST':
         note = request.form.get('note')
         if len(note) < 1:
@@ -19,7 +24,16 @@ def home():
             new_note = Note(data=note, user_id=current_user.id) 
             db.session.add(new_note)
             db.session.commit()
-            flash('Note added', category='success')
+            flash('Note added', category='success') 
+    json_path = os.path.join(current_directory, static_folder, 'js', 'organizations.json')
+    with open(json_path) as json_file:
+        organization = json.load(json_file) 
+
+    return render_template('organizations.html', user=current_user, organization=organization)
+
+
+@views.route('/', methods=['GET', 'POST']) 
+def home(): 
     # getting relative path to json file
     from app import create_app 
     app = create_app()
@@ -30,7 +44,8 @@ def home():
     with open(json_path) as json_file:
         school = json.load(json_file) 
 
-    return render_template('index.html', user=current_user, school=school, zip=zip)
+    return render_template('index.html', user=current_user, school=school)
+
 
 @views.route('/delete_note', methods=['POST'])
 def delete_note():

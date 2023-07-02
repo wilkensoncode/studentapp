@@ -10,4 +10,6 @@ function delete_note(noteId) {
 setTimeout( () => {
     document.querySelector('#flash_message_for_five_second').style.display ='none'
 }, 5000)
+
+
  

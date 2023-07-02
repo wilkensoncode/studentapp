@@ -1,0 +1,27 @@
+{
+    "data1": {
+        "img1":"static/resources/organization/accounting.png", 
+        "title1":"Accounting Society",
+        "text1": [
+            "We are a student-led organization dedicated to helping Southern students become more familiar with the accounting profession and",
+            "providing Business students with various professional development and networking opportunities."
+        ]
+
+    },
+    "data2": {
+        "img2":"static/resources/organization/active.png",
+        "title2":"Active Minds",
+        "text2": [
+            "Active Minds is a mental health awareness and advocacy group focused on breaking down negative stigmas associated",
+            "with mental illness."
+        ] 
+    }, 
+    "data3":{
+        "img3":"static/resources/organization/casas.png",
+        "title3":"CASAS - Center for Academic Success and Accessibility Services",
+        "text3": [
+            "CASAS (Center for Academic Success and Accessibility Services)"
+        ]
+    } 
+}
+

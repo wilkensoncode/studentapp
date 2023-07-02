@@ -3,21 +3,6 @@
 {% block title %} Home {% endblock %}
 
 {% block body %}
-{% if user.is_authenticated %}
-<div class="container pb-3 pt-3">
-    <div class="row justify-content-center align-items-center">
-        <div class="col ">
-            <form method="POST">
-                <div class="text-center d-flex justify-content-center align-items-center">
-                    <textarea name="note" id="note" cols="50"></textarea>
-                    <button type="submit" class="btn bg-dark btn-text ml-5">Add Note</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-{% endif %}
-
 {% include 'school.html' %}
 
 {% endblock %}

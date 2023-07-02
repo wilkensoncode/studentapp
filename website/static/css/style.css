@@ -2,6 +2,8 @@
     --dark: #353535;
     --text: #00ffff;
     --white:#ffffff;
+    --shadow: #35353510;
+    --shadow_hover: #35353550;
      
 }
 body {
@@ -26,6 +28,16 @@ body {
     border-radius: 50%;
     
 }
+.organization-img img {
+    width: 50px; 
+    border-radius: 50%;
+}
+.organization-wrapper {
+    background-color: #ffffff;
+    box-shadow: 0 0  30px var(--shadow_hover);
+    /* transition: box-shadow .3s ease-in; */
+}
+ 
 .profile_info {
     font-size: 17px;
 }

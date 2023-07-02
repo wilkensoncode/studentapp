@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Organizations {% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<div class="container pb-3 pt-3">
+    <div class="row justify-content-center align-items-center">
+        <div class="col ">
+            <form method="POST">
+                <div class="text-center d-flex justify-content-center align-items-center">
+                    <textarea name="note" id="note" cols="50"></textarea>
+                    <button type="submit" class="btn bg-dark btn-text ml-5">Add Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% for _, club in organization.items() %}
+
+<ul>
+    <div class="organization-wrapper">
+        <div class="row   p-3">
+            <div class="d-flex">
+                <div class="organization-img pl-2 pr-2 align-self-center">
+                    <img src="{{ club['img' ~ loop.index] }}" alt="">
+                </div>
+                <div class="col p-3">
+                    <div class="font-weight-bold">{{ club['title' ~ loop.index] }}</div>
+                    <div>
+                        {% for line in club['text' ~ loop.index] %}
+                        {{ line }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ul>
+
+{% endfor %}
+
+
+{% endblock %}
