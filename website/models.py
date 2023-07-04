@@ -122,23 +122,6 @@ class User(db.Model, UserMixin):
         ]
         return random.choice(majors_degrees)
     
-# class Admin(db.Model):
-#     id = db.Column(db.Integer(), primary_key=True)
-#     email = db.Column(db.String(200), unique=True)
-#     password = db.Column(db.String(200))
-
-#     users = db.relationship('User')
-
-#     def admin_email():
-#         return "admin@admin.com"
-       
-#     def admin_passwrd ():
-#          return "adminadm!"
-
-#     def __init__(self, email, password):
-#         self.email = email
-#         self.password = password
-
-    
+ 
 
    
