@@ -5,8 +5,6 @@ import os
 from .models import *
 from .helper_db import db
 
-
-
 views = Blueprint('views', __name__)
 
 @views.route('/organizations', methods=['GET', 'POST']) 
