@@ -3,6 +3,9 @@ from os import path
 from .models import *  # load models
 from .helper_db import db
 from flask_login import LoginManager
+ 
+from dotenv import load_dotenv
+import os
 
 from .views import views 
 from .auth import auth 
@@ -10,19 +13,17 @@ from .auth import auth
 DB_NAME = "student"
 
 def create_app():
-
+    load_dotenv()
     app = Flask(__name__) 
-    app.config['SECRET_KEY'] = 'SECRET'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://root:rootpass@localhost:3306/{DB_NAME}"
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY') 
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
     db.init_app(app)
    
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     
     with app.app_context():
-        create_database()
-        pass
-
+        create_database() 
      
     loggin_manager = LoginManager()
     loggin_manager.login_view = 'auth.login'
