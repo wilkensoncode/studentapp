@@ -1,0 +1,22 @@
+{
+    "course1":{
+        "title":"TOPICS IN ARTS ADMINISTRATION AND CULTURAL ADVOCACY",
+        "desc":"Explore the practice of arts administration with a focus on cultural advocacy in the arts today.",
+        "term":"Spring 2024" 
+    },
+    "course2":{
+        "title":"INTERMEDIATE ACCOUNTING I",
+        "desc":"The first of a three course sequence which includes a comprehensive review of the accounting cycle.",
+        "term":" Spring 2024" 
+    },
+    "course3":{
+        "title":" SOFTWARE DESIGN AND DEVELOPMENT",
+        "desc":"Techniques for the design, organization, management, and implementation of large scale computer software projects. ",
+        "term":"Spring 2024" 
+    },
+    "course4":{
+        "title":"DATABASE SYSTEMS",
+        "desc":"Covers the design, analysis, and development of database management systems (DBMS). ",
+        "term":"Spring 2024" 
+    }
+}

@@ -24,7 +24,7 @@ class Course(db.Model):
         return random.randint(1000, 9999)
     def genrate_course_credit():
         # generate between 1-4digits long integer 
-        return random.randint(1, 4) 
+        return random.randint(3, 4) 
 
 
 class GeneralInformation(db.Model):
@@ -53,9 +53,12 @@ class User(db.Model, UserMixin):
     image = db.Column(db.String(250))
     major = db.Column(db.String(250))
 
+    # user_id = db.Column(db.Integer, db.ForeignKey('user.id')) 
+
     notes = db.relationship('Note')
     courses = db.relationship('Course')  
     GeneralInformation = db.relationship('GeneralInformation')
+    
 
     def __init__(self, email, first_name, last_name, student_id, major, role, password, address, city, state, zip_code, image=None):
         self.email = email
@@ -118,5 +121,24 @@ class User(db.Model, UserMixin):
             "Veterinary Medicine"
         ]
         return random.choice(majors_degrees)
+    
+# class Admin(db.Model):
+#     id = db.Column(db.Integer(), primary_key=True)
+#     email = db.Column(db.String(200), unique=True)
+#     password = db.Column(db.String(200))
+
+#     users = db.relationship('User')
+
+#     def admin_email():
+#         return "admin@admin.com"
+       
+#     def admin_passwrd ():
+#          return "adminadm!"
+
+#     def __init__(self, email, password):
+#         self.email = email
+#         self.password = password
+
+    
 
    

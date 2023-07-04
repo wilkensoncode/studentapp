@@ -23,7 +23,10 @@
         </div>
         <div class="form-group col">
             <label for="role">Role</label>
-            <input type="text" class="form-control" id="role" name="role" placeholder="student / staff" />
+            <select class="form-control" id="role" name="role">
+                <option checked>Student</option>
+                <option disabled>staff</option>
+            </select>
         </div>
     </div>
 
@@ -60,13 +63,6 @@
         <div class="form-group col">
             <label for="zip_code">Zip Code</label>
             <input class="form-control" type="number" id="address" name="zip_code" placeholder="06689" />
-        </div>
-    </div>
-
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="image">Upload Image</label>
-            <input class="form-control-file" type="file" id="image" name="image" accept="image/*" />
         </div>
     </div>
 

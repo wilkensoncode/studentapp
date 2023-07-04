@@ -1,33 +1,35 @@
 {% extends 'base.html' %}
 {% block title %} courses {% endblock %}
 {% block body %}
-<h3 align="center" class="pt-5 pb-4 text-muted">Add Course</h3>
-<hr>
-{% for course in user.courses %}
 
-<div class="row">
+
+
+<h3 class="pt-2 pb-2 text-muted container">Courses</h3>
+
+{% for _, course in courses.items() %}
+<div class="row  ">
     <div class="col courses d-flex justify-content-center">
-        <div class="col">
-            <div class="font-weight-bold font-size:25px"> Course Number:</div>
-            <div class="font-weight-bold pr-2"> Course Title:</div>
-            <div class="font-weight-bold pr-2"> Course Date:</div>
+        <div class="col-3">
+            <div class="font-weight-bold font-size:25px align-self-center">
+                Course Title:
+            </div>
+            <hr>
+            <div class="font-weight-bold pr-2">Description:</div>
+            <hr>
+            <div class="font-weight-bold pr-2">Last Term Offered</div>
+            <hr>
         </div>
-        <div class="col ">
-            <div> {{course.course_number}} </div>
-            <div> {{course.course_title}} </div>
-            <div> {{course.course_date}} </div>
-            <div> {{course.course_credit}} </div>
+        <div class="col">
+            <div> {{course.title}}</div>
+            <hr>
+            <div> {{course.desc}} </div>
+            <hr>
+            <div>{{course.term}} </div>
+            <hr>
         </div>
 
-        <div class="col">
-            <div> {{course.course_credit}} </div>
-            <div> {{course.course_credit}} </div>
-            <div> {{course.course_credit}} </div>
-            <div class="font-weight-bold pr-2"> Course Credit: <span class="pl-2"> {{course.credit}}</span></div>
-        </div>
     </div>
 </div>
-<hr>
 
 {% endfor %}
 
@@ -36,7 +38,8 @@
     <div class="form-row">
         <div class="form-group col">
             <label for="course">Course Title</label>
-            <input class="form-control" type="text" id="course" name="course_title" placeholder="add course (Math)" />
+            <input class="form-control" type="text" id="course" name="course_title"
+                placeholder="SOFTWARE DESIGN AND DEVELOPMENT" />
         </div>
     </div>
     <div class="btn-align pb-5">

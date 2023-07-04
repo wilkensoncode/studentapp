@@ -63,6 +63,11 @@ def delete_note():
 @views.route('/courses', methods=['GET', 'POST'])
 @login_required
 def courses():
+    from app import create_app 
+    app = create_app()
+    static_folder = app.static_folder
+    current_directory = os.getcwd() 
+
     if request.method == 'POST':
         course_title = request.form.get('course_title') 
         if len(course_title) < 3:
@@ -73,24 +78,13 @@ def courses():
             db.session.commit()
             flash('Course added!', category='cuccsess')
 
-    return render_template('course.html', user=current_user)
+    json_path = os.path.join(current_directory, static_folder, 'js', 'courses.json')
+    with open(json_path) as json_file:
+        courses = json.load(json_file) 
+
+    return render_template('course.html', user=current_user, courses=courses)
 
 @views.route('/profile')
 @login_required
-def profile():
-    # if request.method == 'POST':
-    #     student_class = request.form.get("student_class")
-    #     status = request.form.get("status")
-    #     student_type = request.form.get("student_type")
-    #     residency = request.form.get("residency")
-    #     first_term = request.form.get("first_term")
-    #     last_term = request.form.get("last_term")
-    #     user_id = request.form.get("user_id")
-
-    #     generalInformation = (
-    #         GeneralInformation(status=GeneralInformation.status())
-            
-    #                                             )
-
-
+def profile(): 
     return render_template('profile.html', user=current_user)

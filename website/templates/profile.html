@@ -32,7 +32,8 @@
     </div>
     <div class="col profile_info">
         <div class="h1"></div>
-        <div><a href="mailto:{{user.email}}">{{user.email}}</a></div>
+        <div><a href="mailto:{{user.email}}">{{user.last_name | lower }}{{user.first_name |lower
+                }}{{user.id}}@scsu.edu</a></div>
         <div> {{user.address}} </div>
         <div> {{user.city}} </div>
         <div> {{user.state}} </div>
@@ -85,22 +86,56 @@
 </div>
 </div>
 
-<h3 class="pt-5">Total credits: {{ count.value }} </h3>
+<div class="pt-2">
+    <span class="pt-2 h3 text-muted">Total credits: </span>
+    <span class="h3">{{ count.value }}</span>
+</div>
+
 {% if user.notes %}
 <hr>
-<h3 class="text-muted  pt-2 pb-2">Notes</h3>
-<ul class="list-group list-group-flush pb-5" id="note">
-    {% for note in user.notes %}
-    <li class="list-group-item">
-        {{note.data}}
-        <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
-            <span aria-hidden="true" class="text-danger text-bold"
-                onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
-        </button>
-    </li><br>
-    {% endfor %}
-</ul>
-
+<h3 class="text-muted">Notes</h3>
+<div>
+    <ul class="list-group-item pb-0" id="note">
+        {% for note in user.notes %}
+        <li class="list-group-item">
+            {{note.data}}
+            <button type="button" class="close" onclick="delete_note('{{ note.id }}')">
+                <span aria-hidden="true" class="text-danger text-bold"
+                    onclick="return confirm('All deletions are final, are your sure?')">&times;</span>
+            </button>
+        </li><br>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
+<h3 class="pt-2 text-muted">Courses</h3>
+<hr>
+{% for course in user.courses %}
+
+<div class="row">
+    <div class="col courses d-flex justify-content-center">
+        <div class="col">
+            <div class="font-weight-bold font-size:25px"> Course Number:</div>
+            <div class="font-weight-bold pr-2"> Course Title:</div>
+            <div class="font-weight-bold pr-2"> Course Date:</div>
+        </div>
+        <div class="col ">
+            <div> {{course.course_number}} </div>
+            <div> {{course.course_title}} </div>
+            <div> {{course.course_date}} </div>
+            <div> {{course.course_credit}} </div>
+        </div>
+
+        <div class="col">
+            <div> {{course.course_credit}} </div>
+            <div> {{course.course_credit}} </div>
+            <div> {{course.course_credit}} </div>
+            <div class="font-weight-bold pr-2"> Course Credit: <span class="pl-2"> {{course.credit}}</span></div>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endfor %}
 
 {% endblock %}
